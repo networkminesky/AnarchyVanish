@@ -1,0 +1,78 @@
+# AnarchyVanish v1.0.0 - Mensagens
+#
+# Informações:
+# <..> significa que .. é obrigatório; [..] significa que .. é opcional e pode ser omitido; | dentro de [] ou <> significa 'OU'
+# Você pode usar o caractere & para códigos de cores; Exemplo: '&cA cor deste texto seria vermelha!'
+# Você pode usar #XXXXXX para códigos de cores HEX. Exemplo: '#663EF6Este texto seria roxo!'
+# Você pode usar %p% para obter o nome do jogador; Exemplo: '&4&l%p%, você não tem permissão para executar este comando!'
+# Você pode usar %other% para obter o nome do alvo ou da causa
+# Você pode usar %d% para obter o nome de exibição do jogador
+# Você pode usar %tab% para obter o nome do jogador na lista de jogadores (TAB)
+# Você pode usar %prefix% para obter o prefixo do jogador
+# Você pode usar %suffix% para obter o sufixo do jogador
+# Você pode usar %group% para obter o grupo do jogador
+# Você pode usar %nick% para obter o apelido do jogador
+# Algumas mensagens também permitem variáveis diferentes e exclusivas
+#
+# NOTA: Você pode obter MUITO mais placeholders instalando o PlaceholderAPI ou MVdWPlaceholderAPI
+#
+# Mensagens vazias não serão enviadas
+# Usar \n inicia uma nova linha
+#
+# Importante:
+# Você deve dobrar as aspas simples se quiser usá-las dentro de uma mensagem (ex: '').
+# Você NÃO DEVE usar nenhum caractere de tabulação (tecla tab) dentro deste arquivo, caso contrário o YAML encherá seu console de erros!
+# !! Se houver erros no console após editar este arquivo, cole-o em um analisador YAML online para ver se
+# há algum erro de sintaxe YAML !!
+Messages:
+  NoPermission: '&4Acesso negado! Você não tem permissão para fazer isso.'
+  InvalidUsage: '&cUso inválido, você pode usar &6/av help&c para uma lista de comandos.'
+  VanishMessage: '&e%p% saiu do jogo'
+  ReappearMessage: '&e%p% entrou no jogo'
+  VanishMessageWithPermission: '&a[AV] %p% ficou invisível.'
+  ReappearMessageWithPermission: '&a[AV] %p% reapareceu.'
+  OnVanish: '&aVocê agora está invisível!'
+  OnReappear: '&aVocê não está mais invisível!'
+  OnVanishCausedByOtherPlayer: '&a%other% ocultou você, você agora está invisível!'
+  OnReappearCausedByOtherPlayer: '&a%other% revelou você, você agora está visível!'
+  AlreadyVanishedError: '&cVocê já está invisível!'
+  NotVanishedError: '&cVocê não está invisível!'
+  SilentJoinMessageForAdmins: '&a[AV] %p% entrou silenciosamente.'
+  SilentQuitMessageForAdmins: '&a[AV] %p% saiu silenciosamente.'
+  SilentDeathMessage: '&a[AV] %deathmsg%'
+  RemindingMessage: '&aVocê ainda está invisível!'
+  ListMessagePrefix: '&aJogadores Invisíveis:&f %l'
+  ActionBarMessage: '&aVocê está invisível para os outros jogadores!'
+  HideOtherMessage: '&aO jogador &e%other%&a agora está invisível!'
+  ShowOtherMessage: '&aO jogador &e%other%&a agora está visível!'
+  CannotHideOtherPlayer: '&cVocê não tem permissão para alterar a visibilidade de %other%!'
+  AlreadyInvisibleMessage: '&cO jogador &e%other%&c já está invisível!'
+  AlreadyVisibleMessage: '&cO jogador &e%other%&c já está visível!'
+  PluginReloaded: '&aAnarchyVanish recarregado com sucesso (%time%ms)!'
+  InvalidSender: '&cVocê deve ser um jogador para executar este comando!'
+  PlayerNotOnline: '&cEsse jogador não está online!'
+  PlayerNonExistent: '&cEsse jogador não existe!'
+  ToggledPickingUpItemsOn: '&eA coleta de itens agora está &aLIGADA&e.'
+  ToggledPickingUpItemsOff: '&eA coleta de itens agora está &cDESLIGADA&e.'
+  UpdateWarning: '&cAviso! Recriar %updates% redefinirá %changes%. Por favor, use &e/av recreatefiles confirm&c se quiser continuar.'
+  RecreatedConfig: '&a%updates% recriados com sucesso! Por favor, verifique %changes%.'
+  NoConfigUpdateAvailable: '&eSeus arquivos do AnarchyVanish estão atualizados!'
+  RecreationRequiredMsg: '&c[AV] Seus arquivos do AnarchyVanish não estão atualizados, você pode usar &e/av recreatefiles&c para recriá-los
+  ou usar /av recreatefiles dismiss para descartar esta mensagem.
+  Recriar os arquivos do AnarchyVanish lhe dá acesso a novas configurações e recursos do plugin.'
+  DismissedRecreationWarning: '&eVocê não receberá mais notificações sobre esta recriação.'
+  UndismissedRecreationWarning: '&eAgora você receberá notificações sobre esta recriação.'
+  PrintedStacktrace: '&eStacktrace criado com sucesso, verifique o console!'
+  EntityHitDenied: '&c[AV] Você não pode bater em jogadores ou mobs enquanto estiver invisível!'
+  BlockPlaceDenied: '&c[AV] Você não pode colocar blocos enquanto estiver invisível!'
+  BlockBreakDenied: '&c[AV] Você não pode quebrar blocos enquanto estiver invisível!'
+  PluginOutdated: '&c[AV] Sua versão atual do AnarchyVanish está desatualizada. Nova versão: ''%new%''; Atual: ''%current%'''
+  DynmapFakeJoin: '%d% entrou'
+  DynmapFakeQuit: '%d% saiu'
+  HelpHeader: "&a<---------------&e Ajuda do AnarchyVanish &a--------------->"
+  HelpFormat: "&6%usage% &7- &b%description% &c(%permission%)"
+  PlaceholderIsVanishedYes: "Sim"
+  PlaceholderIsVanishedNo: "Não"
+  PlaceholderVanishPrefix: '&a[V] &r'
+  PlaceholderVanishSuffix: ' &r&a[V]'
+MessagesVersion: ${version}

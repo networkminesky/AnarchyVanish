@@ -1,0 +1,51 @@
+name: AnarchyVanish
+version: '${version}'
+
+main: anarchy.minesky.plugin.AnarchyVanish
+api-version: '26.3'
+load: POSTWORLD
+
+authors: [ Bruno C. ]
+
+folia-supported: true
+
+softdepend:
+  - packetevents
+  - PlaceholderAPI
+commands:
+  av:
+    usage: /vanish
+    description: anarchyvanish's main command
+    aliases: [anarchyvanish, v, vanish]
+permissions:
+  anarchyvanish.*:
+    children:
+      anarchyvanish.use: true
+      anarchyvanish.see: true
+      anarchyvanish.reload: true
+      anarchyvanish.logout: true
+      anarchyvanish.login: true
+      anarchyvanish.others: true
+      anarchyvanish.list: true
+      anarchyvanish.keepfly: true
+      anarchyvanish.toggleitems: true
+      anarchyvanish.recreatefiles: true
+      anarchyvanish.notoggle: true
+      anarchyvanish.joinvanished: true
+      anarchyvanish.notify: true
+      anarchyvanish.breakblocks: true
+      anarchyvanish.placeblocks: true
+      anarchyvanish.damage: true
+      anarchyvanish.stacktrace: true
+      anarchyvanish.silentchest: true
+    description: Grants you all anarchyvanish permissions
+  anarchyvanish.see:
+    description: You can see other vanished players
+  anarchyvanish.notoggle:
+    description: Other players cannot hide/show you if you're online
+  anarchyvanish.keepfly:
+    description: You can always keep flying when you reappear
+  anarchyvanish.joinvanished:
+    description: You always join vanished (must be enabled in config)
+  anarchyvanish.silentchest:
+    description: You can open chests silently

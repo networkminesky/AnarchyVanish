@@ -1,0 +1,183 @@
+# AnarchyVanish v${version} - Configuração
+
+############# Recursos de Invisibilidade ##############
+InvisibilityFeatures:
+  # Os jogadores invisíveis devem receber visão noturna?
+  NightVisionEffect: true
+  # O av deve desativar o dano para jogadores invisíveis?
+  DisableDamage: true
+  # O av deve desativar a fome para jogadores invisíveis?
+  DisableHunger: true
+  # O av deve impedir que mobs foquem em jogadores invisíveis?
+  DisableMobTarget: true
+  # Os jogadores invisíveis devem abrir baús e caixas de shulker sem a animação e o som?
+  # Isso os faz entrar temporariamente no modo espectador. É recomendável dar acesso a este recurso
+  # apenas para membros da equipe, pois uma queda do servidor pode fazer com que os jogadores permaneçam no modo espectador.
+  # Permissão: av.silentchest
+  OpenChestsSilently: true
+  # Os jogadores invisíveis devem ser impedidos de ativar placas de pressão e ganchos de armadilha?
+  # Se este recurso estiver ativado, jogadores invisíveis não ativarão placas de pressão nem ganchos de armadilha.
+  DisablePressurePlates: true
+  # Os jogadores invisíveis devem ser impedidos de empurrar outros jogadores ou de serem empurrados?
+  # AVISO: Usa o scoreboard e pode conflitar com outros plugins!
+  DisablePush: false
+  # Jogadores invisíveis devem coletar itens por padrão? Isso pode ser alterado individualmente com /av tipu
+  DefaultPickUpItemsOption: false
+  # O av deve modificar os pacotes da lista de jogadores (TAB) para evitar que o servidor vaze quem está online?
+  # Atualmente, isso só funciona em versões inferiores a 1.19
+  ModifyTablistPackets: true
+  # O av deve modificar os pacotes de autocompletar no TAB para evitar que comandos do Minecraft vazem quem está online?
+  ModifyTabCompletePackets: true
+  # Jogadores invisíveis devem ser incapazes de ativar a vibração de um sensor sculk?
+  PreventSculkSensorActivation: true
+  # Jogadores invisíveis devem ser incapazes de quebrar ovos de tartaruga?
+  PreventTurtleEggBreaking: true
+  # Jogadores invisíveis devem ser impedidos de ativar o efeito de inclinação das folhas de gotejamento (dripleaves)?
+  DisableDripLeaf: true
+  # Jogadores invisíveis devem ser incapazes de iniciar invasões (raids)?
+  PreventRaidTriggering: true
+  # Jogadores invisíveis devem ser incapazes de fazer mobs nascerem (spawnar)? (Apenas Paper)
+  PreventMobSpawning: true
+
+  Fly:
+    # Jogadores invisíveis devem conseguir voar mesmo que não estejam no modo criativo/espectador?
+    Enable: true
+    # Jogadores invisíveis SEM a permissão 'av.keepfly' devem perder a habilidade de voar ao reaparecer?
+    DisableOnReappear: true
+
+############# Recursos de Estado de Invisibilidade ##############
+VanishStateFeatures:
+  # Jogadores com a permissão 'av.joinvanished' devem entrar sempre invisíveis?
+  # Não funciona se você usa o GroupManager para permissões
+  AutoVanishOnJoin: false
+  # Jogadores invisíveis devem reaparecer automaticamente ao mudar de mundo?
+  ReappearOnWorldChange: false
+  # Jogadores invisíveis devem reaparecer automaticamente ao sair do servidor?
+  ReappearOnQuit: false
+  # Jogadores invisíveis devem reaparecer automaticamente
+  # ao mudar de mundo caso não tenham mais a permissão 'av.use'?
+  CheckPermissionOnWorldChange: false
+  # Jogadores invisíveis devem reaparecer automaticamente
+  # ao sair do servidor caso não tenham mais a permissão 'av.use'?
+  CheckPermissionOnQuit: false
+  # Jogadores invisíveis devem reaparecer automaticamente
+  # ao entrar no servidor caso não tenham mais a permissão 'av.use'?
+  # Não funciona se você usa o GroupManager para permissões
+  CheckPermissionOnLogin: true
+
+############## Recursos de Indicação ###############
+IndicationFeatures:
+  LayeredPermissions:
+    # Jogadores com a permissão 'av.see' devem ser capazes de ver jogadores invisíveis no TAB e no jogo?
+    EnableSeePermission: true
+    # Permissões av.use e av.see devem ser em camadas? => av.use.levelX, av.see.levelX
+    # Jogadores podem ver um jogador invisível se o nível de visão (see) for maior ou igual ao nível de uso (use) do outro jogador
+    # Nota: É necessário reconectar para que as alterações tenham efeito caso você mude essas permissões estando online
+    LayeredSeeAndUsePermissions: false
+    # Qual deve ser o nível máximo para ambas as permissões?
+    # Valores menores podem melhorar o desempenho com muitos jogadores, pois reduzem a quantidade de checagens de permissão
+    MaxLevel: 100
+  # Jogadores invisíveis devem aparecer em cinza escuro na lista do TAB e apenas com a cabeça visível?
+  # Apenas jogadores com permissão de ver verão esse efeito; isso ajuda a equipe a
+  # diferenciá-los dos jogadores normais
+  # Atualmente, isso só funciona em versões inferiores a 1.19
+  MarkVanishedPlayersAsSpectators: true
+
+################ Opções de Mensagens #################
+MessageOptions:
+
+  FakeJoinQuitMessages:
+    # O av deve transmitir algum tipo de anúncio (saída falsa ou jogador invisível) quando um jogador fica invisível?
+    # Você pode alterar as mensagens no arquivo messages.yml.
+    BroadcastFakeQuitOnVanish: false
+    # O av deve transmitir algum tipo de anúncio (entrada falsa ou jogador reapareceu) quando um jogador reaparece?
+    # Você pode alterar as mensagens no arquivo messages.yml.
+    BroadcastFakeJoinOnReappear: false
+    # Jogadores com a permissão 'av.see' devem receber um anúncio administrativo em vez de uma mensagem de entrada/saída falsa?
+    # Você pode alterar as mensagens no arquivo messages.yml.
+    AnnounceVanishReappearToAdmins: true
+    # Devem existir apenas anúncios para administradores e nenhuma mensagem falsa de entrada/saída?
+    SendMessageOnlyToAdmins: true
+    # Devem existir apenas mensagens falsas de entrada/saída e nenhum anúncio para administradores?
+    SendMessageOnlyToUsers: false
+
+  # O av deve ocultar as mensagens reais de entrada/saída de jogadores invisíveis?
+  HideRealJoinQuitMessages: true
+  # O av deve ocultar mensagens de conquistas de jogadores invisíveis (enviando apenas para o próprio jogador)? (Apenas Paper)
+  HideAdvancementMessages: true
+  # O av deve ocultar mensagens de saída para jogadores invisíveis se 'VanishStateFeatures->ReappearOnQuit' estiver ativado?
+  # Sobrescreve 'HideRealJoinQuitMessages'
+  ReappearOnQuitHideLeaveMsg: true
+
+  # Jogadores invisíveis devem ter uma action bar avisando que estão invisíveis?
+  # Você pode alterar a action bar no arquivo messages.yml.
+  DisplayActionBar: true
+
+############## Opções Restritivas ###############
+RestrictiveOptions:
+  # Jogadores invisíveis devem ser impedidos de quebrar blocos?
+  # Permissão de desvio (bypass): av.breakblocks
+  PreventBlockBreaking: false
+  # Jogadores invisíveis devem ser impedidos de colocar blocos?
+  # Permissão de desvio (bypass): av.placeblocks
+  PreventBlockPlacing: false
+  # Jogadores invisíveis devem ser impedidos de causar dano a jogadores ou mobs?
+  # Permissão de desvio (bypass): av.damage
+  PreventHittingEntities: false
+
+############# Invisibilidade Externa ##############
+ExternalInvisibility:
+
+  ServerList:
+    # Este plugin deve ajustar a quantidade de jogadores na lista do servidor? (-1 por jogador invisível)
+    AdjustAmountOfOnlinePlayers: true
+    # Este plugin deve ocultar jogadores invisíveis na lista de jogadores conectados?
+    # Você pode ver esta lista ao passar o mouse sobre a quantidade de jogadores online.
+    AdjustListOfLoggedInPlayers: true
+
+################## Opções de Integração (Hooks) ##################
+HookOptions:
+  # O av deve ocultar jogadores invisíveis no seu mapa dinâmico e transmitir mensagens de entrada/saída se usar o Dynmap?
+  EnableDynmapHook: true
+  # O av deve enviar mensagens falsas de entrada/saída no chat web do Dynmap?
+  # Você pode configurar as mensagens de entrada/saída no arquivo messages.yml
+  DynmapSendJoinLeaveMessages: true
+  # O av deve se integrar ao TrailGUI e desativar rastros (trails) enquanto estiver invisível?
+  EnableTrailGUIHook: true
+  # O av deve se integrar ao PlaceholderAPI e adicionar novos placeholders ao av + registrar os seus próprios para outros plugins?
+  # Próprios: iavanished, vanishedplayers, playercount
+  # Formato: %AnarchyVanish_<placeholder>%
+  EnablePlaceholderAPIHook: true
+  # O av deve se integrar ao MVdWPlaceholderAPI e adicionar novos placeholders ao av + registrar os seus próprios para
+  # outros plugins?
+  # Próprios: iavanished, vanishedplayers, playercount
+  # Formato: {AnarchyVanish_<placeholder>}
+  EnableMVdWPlaceholderAPIHook: true
+  # O av deve impedir que NPCs cumprimentem ou falem sobre jogadores invisíveis?
+  EnableCitizensHook: true
+  # O av deve usar o OpenInv para abrir baús silenciosamente?
+  EnableOpenInvHook: true
+
+############# Opções de Compatibilidade ##############
+CompatibilityOptions:
+  # Esta seção é apenas para usuários avançados!
+  # A prioridade de evento que o AnarchyVanish deve usar para o evento específico.
+  # Os valores permitidos são LOWEST, LOW, NORMAL, HIGH, HIGHEST e MONITOR
+  # Prioridades mais altas podem se sobrepor a outros plugins, enquanto mais baixas podem não se sobrepor
+
+  # A prioridade para remover a mensagem de entrada
+  PlayerJoinEventPriority: HIGH
+  # A prioridade para remover a mensagem de saída
+  PlayerQuitEventPriority: HIGH
+
+############# Opções Diversas ##############
+MiscellaneousOptions:
+
+  UpdateChecker:
+    # O av deve checar por atualizações no Spigot regularmente? Não há atualização automática; isso apenas informa você
+    Enable: true
+    # Jogadores com a permissão 'av.notify' devem ser notificados se a versão atual do av estiver desatualizada?
+    NotifyAdmins: true
+
+################ Não Alterar ###################
+ConfigVersion: ${version}

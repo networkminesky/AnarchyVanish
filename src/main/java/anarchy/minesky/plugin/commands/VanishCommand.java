@@ -1,0 +1,27 @@
+package anarchy.minesky.plugin.commands;
+
+import anarchy.minesky.plugin.AnarchyVanish;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+
+import java.util.List;
+
+public class VanishCommand {
+
+    private final AnarchyVanish plugin;
+    private final SubCommandMgr subCommandMgr;
+
+    public VanishCommand(AnarchyVanish plugin) {
+        this.plugin = plugin;
+        subCommandMgr = new SubCommandMgr(plugin);
+    }
+
+    public void execute(Command command, CommandSender sender, String commandLabel, String[] args) {
+        subCommandMgr.execute(command, sender, args, commandLabel);
+    }
+
+    public List<String> tabComplete(Command command, CommandSender sender, String alias, String[] args)
+            throws IllegalArgumentException {
+        return subCommandMgr.onTabComplete(command, sender, alias, args);
+    }
+}
